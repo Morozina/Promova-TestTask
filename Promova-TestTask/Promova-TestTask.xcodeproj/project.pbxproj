@@ -11,6 +11,11 @@
 		1858B96F2B51DD8300B9DE09 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B96E2B51DD8300B9DE09 /* DashboardView.swift */; };
 		1858B9712B51DD8400B9DE09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1858B9702B51DD8400B9DE09 /* Assets.xcassets */; };
 		1858B9752B51DD8400B9DE09 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1858B9742B51DD8400B9DE09 /* Preview Assets.xcassets */; };
+		1858B9852B51E18500B9DE09 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9842B51E18500B9DE09 /* DashboardViewModel.swift */; };
+		1858B9922B51E4D600B9DE09 /* Config+URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9912B51E4D600B9DE09 /* Config+URLs.swift */; };
+		1858B9942B51E52400B9DE09 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9932B51E52400B9DE09 /* Config.swift */; };
+		1858B9982B51E89D00B9DE09 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9972B51E89D00B9DE09 /* Categories.swift */; };
+		1858B9A32B51EC7300B9DE09 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9A22B51EC7300B9DE09 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +25,11 @@
 		1858B9702B51DD8400B9DE09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1858B9722B51DD8400B9DE09 /* Promova_TestTask.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Promova_TestTask.entitlements; sourceTree = "<group>"; };
 		1858B9742B51DD8400B9DE09 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1858B9842B51E18500B9DE09 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		1858B9912B51E4D600B9DE09 /* Config+URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Config+URLs.swift"; sourceTree = "<group>"; };
+		1858B9932B51E52400B9DE09 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		1858B9972B51E89D00B9DE09 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		1858B9A22B51EC7300B9DE09 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,8 +46,8 @@
 		1858B9602B51DD8300B9DE09 = {
 			isa = PBXGroup;
 			children = (
-				1858B96B2B51DD8300B9DE09 /* Promova-TestTask */,
 				1858B96A2B51DD8300B9DE09 /* Products */,
+				1858B96B2B51DD8300B9DE09 /* Promova-TestTask */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,8 +62,9 @@
 		1858B96B2B51DD8300B9DE09 /* Promova-TestTask */ = {
 			isa = PBXGroup;
 			children = (
-				1858B97E2B51DDF000B9DE09 /* Features */,
 				1858B97B2B51DD8D00B9DE09 /* Application */,
+				1858B97E2B51DDF000B9DE09 /* Features */,
+				1858B9862B51E20C00B9DE09 /* Networking */,
 				1858B9732B51DD8400B9DE09 /* Preview Content */,
 			);
 			path = "Promova-TestTask";
@@ -87,6 +98,7 @@
 		1858B97D2B51DDCB00B9DE09 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				1858B9902B51E4B800B9DE09 /* Config+Extensions */,
 				1858B9722B51DD8400B9DE09 /* Promova_TestTask.entitlements */,
 			);
 			path = Config;
@@ -112,9 +124,52 @@
 		1858B9802B51DE6100B9DE09 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				1858B96E2B51DD8300B9DE09 /* DashboardView.swift */,
+				1858B9822B51E16D00B9DE09 /* Model */,
+				1858B9812B51E15200B9DE09 /* ViewModel */,
+				1858B9832B51E17200B9DE09 /* View */,
 			);
 			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		1858B9812B51E15200B9DE09 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1858B9842B51E18500B9DE09 /* DashboardViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1858B9822B51E16D00B9DE09 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1858B9972B51E89D00B9DE09 /* Categories.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1858B9832B51E17200B9DE09 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1858B96E2B51DD8300B9DE09 /* DashboardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1858B9862B51E20C00B9DE09 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				1858B9A22B51EC7300B9DE09 /* NetworkManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		1858B9902B51E4B800B9DE09 /* Config+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1858B9932B51E52400B9DE09 /* Config.swift */,
+				1858B9912B51E4D600B9DE09 /* Config+URLs.swift */,
+			);
+			path = "Config+Extensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,7 +242,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1858B9852B51E18500B9DE09 /* DashboardViewModel.swift in Sources */,
 				1858B96F2B51DD8300B9DE09 /* DashboardView.swift in Sources */,
+				1858B9942B51E52400B9DE09 /* Config.swift in Sources */,
+				1858B9A32B51EC7300B9DE09 /* NetworkManager.swift in Sources */,
+				1858B9982B51E89D00B9DE09 /* Categories.swift in Sources */,
+				1858B9922B51E4D600B9DE09 /* Config+URLs.swift in Sources */,
 				1858B96D2B51DD8300B9DE09 /* MainView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
