@@ -16,6 +16,10 @@
 		1858B9942B51E52400B9DE09 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9932B51E52400B9DE09 /* Config.swift */; };
 		1858B9982B51E89D00B9DE09 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9972B51E89D00B9DE09 /* Categories.swift */; };
 		1858B9A32B51EC7300B9DE09 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9A22B51EC7300B9DE09 /* NetworkManager.swift */; };
+		1858B9A62B51F78600B9DE09 /* Theme+Dimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9A52B51F78600B9DE09 /* Theme+Dimensions.swift */; };
+		1858B9A82B51F7A100B9DE09 /* Theme+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9A72B51F7A100B9DE09 /* Theme+Colors.swift */; };
+		1858B9AA2B51F7C100B9DE09 /* Theme+Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9A92B51F7C100B9DE09 /* Theme+Fonts.swift */; };
+		1858B9AC2B51F7E900B9DE09 /* Theme+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9AB2B51F7E900B9DE09 /* Theme+Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		1858B9932B51E52400B9DE09 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		1858B9972B51E89D00B9DE09 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		1858B9A22B51EC7300B9DE09 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		1858B9A52B51F78600B9DE09 /* Theme+Dimensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme+Dimensions.swift"; sourceTree = "<group>"; };
+		1858B9A72B51F7A100B9DE09 /* Theme+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme+Colors.swift"; sourceTree = "<group>"; };
+		1858B9A92B51F7C100B9DE09 /* Theme+Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme+Fonts.swift"; sourceTree = "<group>"; };
+		1858B9AB2B51F7E900B9DE09 /* Theme+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme+Constants.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +89,7 @@
 		1858B97B2B51DD8D00B9DE09 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				1858B9A42B51F76D00B9DE09 /* Theme */,
 				1858B97D2B51DDCB00B9DE09 /* Config */,
 				1858B97C2B51DDA000B9DE09 /* Assets */,
 			);
@@ -172,6 +181,17 @@
 			path = "Config+Extensions";
 			sourceTree = "<group>";
 		};
+		1858B9A42B51F76D00B9DE09 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				1858B9A52B51F78600B9DE09 /* Theme+Dimensions.swift */,
+				1858B9A72B51F7A100B9DE09 /* Theme+Colors.swift */,
+				1858B9A92B51F7C100B9DE09 /* Theme+Fonts.swift */,
+				1858B9AB2B51F7E900B9DE09 /* Theme+Constants.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -242,8 +262,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1858B9A62B51F78600B9DE09 /* Theme+Dimensions.swift in Sources */,
 				1858B9852B51E18500B9DE09 /* DashboardViewModel.swift in Sources */,
+				1858B9A82B51F7A100B9DE09 /* Theme+Colors.swift in Sources */,
 				1858B96F2B51DD8300B9DE09 /* DashboardView.swift in Sources */,
+				1858B9AA2B51F7C100B9DE09 /* Theme+Fonts.swift in Sources */,
+				1858B9AC2B51F7E900B9DE09 /* Theme+Constants.swift in Sources */,
 				1858B9942B51E52400B9DE09 /* Config.swift in Sources */,
 				1858B9A32B51EC7300B9DE09 /* NetworkManager.swift in Sources */,
 				1858B9982B51E89D00B9DE09 /* Categories.swift in Sources */,
