@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Combine
 
 protocol NetworkManager {
     func fetchCategoriesAsync() async -> [Categories]?
