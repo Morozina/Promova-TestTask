@@ -22,6 +22,11 @@
 		1858B9AC2B51F7E900B9DE09 /* Theme+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9AB2B51F7E900B9DE09 /* Theme+Constants.swift */; };
 		1858B9B02B51FC7F00B9DE09 /* CategoryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9AF2B51FC7E00B9DE09 /* CategoryCardView.swift */; };
 		1858B9B22B51FF1C00B9DE09 /* CategoryStatusType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9B12B51FF1C00B9DE09 /* CategoryStatusType.swift */; };
+		1858B9B52B52CBD500B9DE09 /* HostingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9B42B52CBD500B9DE09 /* HostingView.swift */; };
+		1858B9B92B52CC2E00B9DE09 /* RouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9B82B52CC2E00B9DE09 /* RouterView.swift */; };
+		1858B9BC2B52CC7B00B9DE09 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9BB2B52CC7B00B9DE09 /* Router.swift */; };
+		1858B9C02B52CCCF00B9DE09 /* AppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9BF2B52CCCF00B9DE09 /* AppRoute.swift */; };
+		1858B9C42B52CDBD00B9DE09 /* CategoryDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9C32B52CDBD00B9DE09 /* CategoryDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +47,11 @@
 		1858B9AB2B51F7E900B9DE09 /* Theme+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme+Constants.swift"; sourceTree = "<group>"; };
 		1858B9AF2B51FC7E00B9DE09 /* CategoryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCardView.swift; sourceTree = "<group>"; };
 		1858B9B12B51FF1C00B9DE09 /* CategoryStatusType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryStatusType.swift; sourceTree = "<group>"; };
+		1858B9B42B52CBD500B9DE09 /* HostingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingView.swift; sourceTree = "<group>"; };
+		1858B9B82B52CC2E00B9DE09 /* RouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterView.swift; sourceTree = "<group>"; };
+		1858B9BB2B52CC7B00B9DE09 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		1858B9BF2B52CCCF00B9DE09 /* AppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoute.swift; sourceTree = "<group>"; };
+		1858B9C32B52CDBD00B9DE09 /* CategoryDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +131,9 @@
 		1858B97E2B51DDF000B9DE09 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				1858B9C12B52CD9E00B9DE09 /* Category Details View */,
+				1858B9B62B52CC0A00B9DE09 /* Router */,
+				1858B9B32B52CBCB00B9DE09 /* HostingView */,
 				1858B9802B51DE6100B9DE09 /* Dashboard */,
 				1858B97F2B51DE4E00B9DE09 /* MainView */,
 			);
@@ -214,6 +227,64 @@
 			path = "Category View";
 			sourceTree = "<group>";
 		};
+		1858B9B32B52CBCB00B9DE09 /* HostingView */ = {
+			isa = PBXGroup;
+			children = (
+				1858B9B42B52CBD500B9DE09 /* HostingView.swift */,
+			);
+			path = HostingView;
+			sourceTree = "<group>";
+		};
+		1858B9B62B52CC0A00B9DE09 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				1858B9BE2B52CCBF00B9DE09 /* View */,
+				1858B9BD2B52CCB800B9DE09 /* Model */,
+				1858B9BA2B52CC6500B9DE09 /* Router Navigation */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		1858B9BA2B52CC6500B9DE09 /* Router Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				1858B9BB2B52CC7B00B9DE09 /* Router.swift */,
+			);
+			path = "Router Navigation";
+			sourceTree = "<group>";
+		};
+		1858B9BD2B52CCB800B9DE09 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1858B9BF2B52CCCF00B9DE09 /* AppRoute.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1858B9BE2B52CCBF00B9DE09 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1858B9B82B52CC2E00B9DE09 /* RouterView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1858B9C12B52CD9E00B9DE09 /* Category Details View */ = {
+			isa = PBXGroup;
+			children = (
+				1858B9C22B52CDB000B9DE09 /* View */,
+			);
+			path = "Category Details View";
+			sourceTree = "<group>";
+		};
+		1858B9C22B52CDB000B9DE09 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1858B9C32B52CDBD00B9DE09 /* CategoryDetailsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -289,9 +360,14 @@
 				1858B9B02B51FC7F00B9DE09 /* CategoryCardView.swift in Sources */,
 				1858B9A82B51F7A100B9DE09 /* Theme+Colors.swift in Sources */,
 				1858B96F2B51DD8300B9DE09 /* DashboardView.swift in Sources */,
+				1858B9C42B52CDBD00B9DE09 /* CategoryDetailsView.swift in Sources */,
+				1858B9B52B52CBD500B9DE09 /* HostingView.swift in Sources */,
+				1858B9C02B52CCCF00B9DE09 /* AppRoute.swift in Sources */,
 				1858B9AA2B51F7C100B9DE09 /* Theme+Fonts.swift in Sources */,
 				1858B9AC2B51F7E900B9DE09 /* Theme+Constants.swift in Sources */,
+				1858B9BC2B52CC7B00B9DE09 /* Router.swift in Sources */,
 				1858B9942B51E52400B9DE09 /* Config.swift in Sources */,
+				1858B9B92B52CC2E00B9DE09 /* RouterView.swift in Sources */,
 				1858B9A32B51EC7300B9DE09 /* NetworkManager.swift in Sources */,
 				1858B9B22B51FF1C00B9DE09 /* CategoryStatusType.swift in Sources */,
 				1858B9982B51E89D00B9DE09 /* Categories.swift in Sources */,

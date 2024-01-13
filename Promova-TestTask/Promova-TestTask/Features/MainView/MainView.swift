@@ -11,8 +11,7 @@ import SwiftUI
 struct MainView: App {
     var body: some Scene {
         WindowGroup {
-            DashboardView(viewModel: DashboardViewModel())
-                .background(Color(Theme.Colors.generalBgColor))
+            HostingView()
         }
     }
 }
