@@ -5,11 +5,17 @@
 //  Created by Vladyslav Moroz on 12/01/2024.
 //
 
-import Foundation
+import SwiftUI
 
 final class DashboardViewModel: ObservableObject {
     // MARK: - Published
+    @Published var categoryCardTitle: String = ""
+    @Published var categoryCardConent: [ContentItem] = []
     @Published var categories: [Categories] = []
+    @Published var categoryCardType: CategoryStatusType = .free
+    @Published var shouldShowAlert: Bool = false
+    @Published var shouldShowLoader: Bool = false
+    @Published var circleProgress: Double = .zero
 
     // MARK: - Dependencies
     private let networkManager: NetworkManager
@@ -30,6 +36,32 @@ final class DashboardViewModel: ObservableObject {
         // Switch to the main thread to update the UI
         DispatchQueue.main.async {
             self.categories = fetchedCategories
+        }
+    }
+
+    func handleAlertAction(with title: String, and content: [ContentItem], type: CategoryStatusType) {
+        shouldShowAlert = true
+        categoryCardTitle = title
+        categoryCardConent = content
+        categoryCardType = type
+    }
+
+    func handleShowAdAction(with router: Router) {
+        withAnimation {
+            shouldShowLoader = true
+        }
+
+        withAnimation(.easeInOut(duration: Theme.Constants.Dashboard.circleProgressDuration)) {
+            circleProgress = 1
+        }
+
+        Timer.scheduledTimer(withTimeInterval: Theme.Constants.Dashboard.circleProgressDuration, repeats: false) { _ in
+            withAnimation {
+                self.shouldShowLoader = false
+                self.circleProgress = .zero
+
+                router.push(to: .categoryDetails(self.categoryCardTitle, self.categoryCardConent))
+            }
         }
     }
 }
