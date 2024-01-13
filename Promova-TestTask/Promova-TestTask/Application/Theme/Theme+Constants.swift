@@ -18,6 +18,9 @@ extension Theme {
         /// Half shadow opacity 50%
         static let halfShadowOpacity: Double = 0.5
 
+        /// Default border height: 3 px
+        static let defaultBorderHeight: CGFloat = 3.0
+
         enum CategoryCard {
             static let imageSize: CGSize = CGSize(width: 121, height: 90)
             static let smallIconSize: CGSize = CGSize(width: 10, height: 12)

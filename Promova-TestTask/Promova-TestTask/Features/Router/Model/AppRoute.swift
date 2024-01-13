@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum AppRoute {
+enum AppRoute: Hashable {
     case dashboard
-    case categoryDetails
+    case categoryDetails(_: String)
 }
