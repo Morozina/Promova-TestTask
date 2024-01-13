@@ -15,6 +15,21 @@ struct DashboardView: View {
     @EnvironmentObject var router: Router
 
     var body: some View {
+        VStack(spacing: .zero) {
+            if viewModel.isLoading {
+                PageLoadingView()
+            } else {
+                ContentSection
+            }
+        }
+        .onAppear {
+            Task {
+                await viewModel.loadCategories()
+            }
+        }
+    }
+
+    var ContentSection: some View {
         ZStack {
             ScrollView {
                 VStack(spacing: Theme.Dimensions.marginMediumVertical) {
@@ -32,11 +47,6 @@ struct DashboardView: View {
             }
         }
         .background(Color(Theme.Colors.generalBgColor))
-        .onAppear {
-            Task {
-                await viewModel.loadCategories()
-            }
-        }
         .alert(isPresented: $viewModel.shouldShowAlert) {
             if viewModel.categoryCardType == .paid {
                 Alert(

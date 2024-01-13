@@ -21,6 +21,15 @@ extension Theme {
         /// Default border height: 3 px
         static let defaultBorderHeight: CGFloat = 3.0
 
+        /// Medium icon size: 30 px
+        static let mediumIconSize: CGSize = CGSize(width: 30, height: 30)
+
+        /// Large icon size: 45 px
+        static let largeIconSize: CGSize = CGSize(width: 45, height: 45)
+
+        /// Loading animation Time Interval 0.3 sec
+        static let loadingAnimationTimeInterval: TimeInterval = 0.3
+
         enum CategoryCard {
             static let imageSize: CGSize = CGSize(width: 121, height: 90)
             static let smallIconSize: CGSize = CGSize(width: 10, height: 12)

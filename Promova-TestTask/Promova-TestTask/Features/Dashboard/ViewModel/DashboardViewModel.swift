@@ -15,6 +15,7 @@ final class DashboardViewModel: ObservableObject {
     @Published var categoryCardType: CategoryStatusType = .free
     @Published var shouldShowAlert: Bool = false
     @Published var shouldShowLoader: Bool = false
+    @Published var isLoading: Bool = true
     @Published var circleProgress: Double = .zero
 
     // MARK: - Dependencies
@@ -33,9 +34,13 @@ final class DashboardViewModel: ObservableObject {
         // Make sure that fetchedCategories != nil else return from func
         guard let fetchedCategories else { return }
 
+        // Sort the fetchedCategories based on the order property
+        let sortedCategories = fetchedCategories.sorted(by: { $0.order < $1.order })
+
         // Switch to the main thread to update the UI
         DispatchQueue.main.async {
-            self.categories = fetchedCategories
+            self.categories = sortedCategories
+            self.isLoading = false
         }
     }
 
