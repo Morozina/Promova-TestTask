@@ -14,12 +14,7 @@ struct Categories: Codable {
     var order: Int
     var status: String
     var content: [ContentItem]?
-
-    struct ContentItem: Codable, Hashable {
-        var fact: String
-        var image: String
-    }
-
+    
     var imageURL: URL? {
         URL(string: image)
     }
