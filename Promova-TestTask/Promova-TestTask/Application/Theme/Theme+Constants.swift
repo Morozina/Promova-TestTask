@@ -31,5 +31,12 @@ extension Theme {
             static let maxCardHeight: CGFloat = 500
             static let imageHeight: CGFloat = 234
         }
+
+        enum Dashboard {
+            static let circleSize: CGSize = CGSize(width: 120, height: 120)
+            static let offsetWhenCollapseStarted: CGFloat = 10.0
+            static let circleRotationEffect: CGFloat = -90.0
+            static let circleProgressDuration: TimeInterval = 2.0
+        }
     }
 }

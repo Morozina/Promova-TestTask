@@ -20,8 +20,8 @@ struct Categories: Codable {
     }
 
     var type: CategoryStatusType {
-        guard !status.isEmpty else { return .comingSoon }
-        
+        guard content != nil else { return .comingSoon }
+
         return status == "paid" ? .paid : .free
     }
 }

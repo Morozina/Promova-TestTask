@@ -16,15 +16,21 @@ struct DashboardView: View {
 
     var body: some View {
         VStack {
-            ScrollView {
-                VStack(spacing: Theme.Dimensions.marginMediumVertical) {
-                    ForEach(viewModel.categories, id: \.self) { item in
-                        CategoryCardView(imageURL: item.imageURL, title: item.title, subTitle: item.description, type: item.type) {
-                            router.push(to: .categoryDetails(item.title, item.content ?? []))
+            ZStack {
+                ScrollView {
+                    VStack(spacing: Theme.Dimensions.marginMediumVertical) {
+                        ForEach(viewModel.categories, id: \.self) { item in
+                            CategoryCardView(imageURL: item.imageURL, title: item.title, subTitle: item.description, type: item.type) {
+                                item.type == .free ? router.push(to: .categoryDetails(item.title, item.content ?? [])) : viewModel.handleAlertAction(with: item.title, and: item.content ?? [], type: item.type)
+                            }
                         }
                     }
+                    .padding(.top, Theme.Dimensions.marginMediumVertical)
+                    .blur(radius: viewModel.shouldShowLoader ? 1 : 0)
                 }
-                .padding(.top, Theme.Dimensions.marginMediumVertical)
+                if viewModel.shouldShowLoader {
+                    LoaderSection
+                }
             }
         }
         .background(Color(Theme.Colors.generalBgColor))
@@ -32,6 +38,36 @@ struct DashboardView: View {
             Task {
                 await viewModel.loadCategories()
             }
+        }
+        .alert(isPresented: $viewModel.shouldShowAlert) {
+            if viewModel.categoryCardType == .paid {
+                Alert(
+                    title: Text("Watch Ad to continue"),
+                    primaryButton: .cancel(Text("Cancel")) {
+                        viewModel.shouldShowAlert = false
+                    },
+                    secondaryButton: .default(Text("Show Ad")) {
+                        viewModel.handleShowAdAction(with: router)
+                    }
+                )
+            } else {
+                Alert(title: Text("\(viewModel.categoryCardTitle) category coming soon"), dismissButton: .default(Text("OK")))
+            }
+        }
+    }
+
+    var LoaderSection: some View {
+        ZStack {
+            Circle()
+                .stroke(lineWidth: Theme.Constants.Dashboard.offsetWhenCollapseStarted)
+                .foregroundColor(Color(Theme.Colors.lightBlue))
+                .frame(width: Theme.Constants.Dashboard.circleSize.width, height: Theme.Constants.Dashboard.circleSize.height)
+            Circle()
+                .trim(from: .zero, to: viewModel.circleProgress)
+                .stroke(style: StrokeStyle(lineWidth: Theme.Constants.Dashboard.offsetWhenCollapseStarted, lineCap: .round, lineJoin: .round))
+                .foregroundColor(Color(Theme.Colors.softBlue))
+                .rotationEffect(Angle(degrees: Theme.Constants.Dashboard.circleRotationEffect))
+                .frame(width: Theme.Constants.Dashboard.circleSize.width, height: Theme.Constants.Dashboard.circleSize.height)
         }
     }
 }
