@@ -28,6 +28,9 @@
 		1858B9C02B52CCCF00B9DE09 /* AppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9BF2B52CCCF00B9DE09 /* AppRoute.swift */; };
 		1858B9C42B52CDBD00B9DE09 /* CategoryDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9C32B52CDBD00B9DE09 /* CategoryDetailsView.swift */; };
 		1858B9C72B52D1E700B9DE09 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9C62B52D1E700B9DE09 /* NavigationView.swift */; };
+		1858B9CA2B52EBB300B9DE09 /* FactCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9C92B52EBB300B9DE09 /* FactCardView.swift */; };
+		1858B9CD2B52F0E300B9DE09 /* CategoryDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9CC2B52F0E300B9DE09 /* CategoryDetailsViewModel.swift */; };
+		1858B9CF2B52F1F200B9DE09 /* ContentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9CE2B52F1F200B9DE09 /* ContentItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		1858B9BF2B52CCCF00B9DE09 /* AppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoute.swift; sourceTree = "<group>"; };
 		1858B9C32B52CDBD00B9DE09 /* CategoryDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailsView.swift; sourceTree = "<group>"; };
 		1858B9C62B52D1E700B9DE09 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
+		1858B9C92B52EBB300B9DE09 /* FactCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactCardView.swift; sourceTree = "<group>"; };
+		1858B9CC2B52F0E300B9DE09 /* CategoryDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailsViewModel.swift; sourceTree = "<group>"; };
+		1858B9CE2B52F1F200B9DE09 /* ContentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +179,7 @@
 			children = (
 				1858B9972B51E89D00B9DE09 /* Categories.swift */,
 				1858B9B12B51FF1C00B9DE09 /* CategoryStatusType.swift */,
+				1858B9CE2B52F1F200B9DE09 /* ContentItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -216,6 +223,7 @@
 		1858B9AD2B51FC5B00B9DE09 /* UI Components */ = {
 			isa = PBXGroup;
 			children = (
+				1858B9C82B52EB9F00B9DE09 /* Fact Card View */,
 				1858B9C52B52D1D000B9DE09 /* Navigation View */,
 				1858B9AE2B51FC6D00B9DE09 /* Category View */,
 			);
@@ -275,6 +283,7 @@
 		1858B9C12B52CD9E00B9DE09 /* Category Details View */ = {
 			isa = PBXGroup;
 			children = (
+				1858B9CB2B52F0D600B9DE09 /* View Model */,
 				1858B9C22B52CDB000B9DE09 /* View */,
 			);
 			path = "Category Details View";
@@ -294,6 +303,22 @@
 				1858B9C62B52D1E700B9DE09 /* NavigationView.swift */,
 			);
 			path = "Navigation View";
+			sourceTree = "<group>";
+		};
+		1858B9C82B52EB9F00B9DE09 /* Fact Card View */ = {
+			isa = PBXGroup;
+			children = (
+				1858B9C92B52EBB300B9DE09 /* FactCardView.swift */,
+			);
+			path = "Fact Card View";
+			sourceTree = "<group>";
+		};
+		1858B9CB2B52F0D600B9DE09 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				1858B9CC2B52F0E300B9DE09 /* CategoryDetailsViewModel.swift */,
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,10 +395,13 @@
 				1858B9A62B51F78600B9DE09 /* Theme+Dimensions.swift in Sources */,
 				1858B9852B51E18500B9DE09 /* DashboardViewModel.swift in Sources */,
 				1858B9B02B51FC7F00B9DE09 /* CategoryCardView.swift in Sources */,
+				1858B9CA2B52EBB300B9DE09 /* FactCardView.swift in Sources */,
 				1858B9A82B51F7A100B9DE09 /* Theme+Colors.swift in Sources */,
 				1858B96F2B51DD8300B9DE09 /* DashboardView.swift in Sources */,
 				1858B9C42B52CDBD00B9DE09 /* CategoryDetailsView.swift in Sources */,
+				1858B9CD2B52F0E300B9DE09 /* CategoryDetailsViewModel.swift in Sources */,
 				1858B9B52B52CBD500B9DE09 /* HostingView.swift in Sources */,
+				1858B9CF2B52F1F200B9DE09 /* ContentItem.swift in Sources */,
 				1858B9C02B52CCCF00B9DE09 /* AppRoute.swift in Sources */,
 				1858B9AA2B51F7C100B9DE09 /* Theme+Fonts.swift in Sources */,
 				1858B9AC2B51F7E900B9DE09 /* Theme+Constants.swift in Sources */,

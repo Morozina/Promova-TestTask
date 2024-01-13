@@ -16,8 +16,8 @@ struct HostingView: View {
             switch path {
             case .dashboard:
                 DashboardView(viewModel: DashboardViewModel())
-            case .categoryDetails(let title):
-                CategoryDetailsView(title: title)
+            case .categoryDetails(let title, let content):
+                CategoryDetailsView(viewMdoel: CategoryDetailsViewModel(categoryTitle: title, factContent: content))
             }
         }
     }

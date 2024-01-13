@@ -26,5 +26,10 @@ extension Theme {
             static let smallIconSize: CGSize = CGSize(width: 10, height: 12)
             static let maxCardHeight: CGFloat = 100
         }
+
+        enum FactCard {
+            static let maxCardHeight: CGFloat = 500
+            static let imageHeight: CGFloat = 234
+        }
     }
 }

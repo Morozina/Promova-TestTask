@@ -20,7 +20,7 @@ struct DashboardView: View {
                 VStack(spacing: Theme.Dimensions.marginMediumVertical) {
                     ForEach(viewModel.categories, id: \.self) { item in
                         CategoryCardView(imageURL: item.imageURL, title: item.title, subTitle: item.description, type: item.type) {
-                            router.push(to: .categoryDetails(item.title))
+                            router.push(to: .categoryDetails(item.title, item.content ?? []))
                         }
                     }
                 }

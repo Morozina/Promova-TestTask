@@ -49,6 +49,8 @@ extension Theme {
         static let medium10: Font = .system(size: 10, weight: .medium)
 
         // MARK: - Light
+        static let light52: Font = .system(size: 52, weight: .light)
+
         static let light24: Font = .system(size: 24, weight: .light)
 
         static let light19: Font = .system(size: 19, weight: .light)
