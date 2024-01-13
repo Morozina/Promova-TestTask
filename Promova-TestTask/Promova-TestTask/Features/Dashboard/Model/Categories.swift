@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Categories: Codable, Hashable {
+struct Categories: Codable {
     var title: String
     var description: String
     var image: String
@@ -20,6 +20,18 @@ struct Categories: Codable, Hashable {
         var image: String
     }
 
+    var imageURL: URL? {
+        URL(string: image)
+    }
+
+    var type: CategoryStatusType {
+        guard !status.isEmpty else { return .comingSoon }
+        
+        return status == "paid" ? .paid : .free
+    }
+}
+
+extension Categories: Hashable {
     static func == (lhs: Categories, rhs: Categories) -> Bool {
         // Assuming two instances are equal if all properties are equal
         lhs.title == rhs.title &&

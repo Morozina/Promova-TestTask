@@ -13,13 +13,16 @@ class Theme {
         static let marginZero: CGFloat = 0
 
         /// Small margin: 1 px
-        static let marginSmall: CGFloat = 1.0
+        static let marginMinimal: CGFloat = 1.0
 
-        /// Extra extra small margin: 2 px
-        static let marginExtraExtraSmall: CGFloat = 2
+        /// Small margin: 2 px
+        static let marginSmall: CGFloat = 2.0
 
-        /// Extra small margin: 4 px
-        static let marginExtraSmall: CGFloat = 4
+        /// Extra extra small margin: 4 px
+        static let marginExtraExtraSmall: CGFloat = 4
+
+        /// Extra small margin: 5 px
+        static let marginExtraSmall: CGFloat = 5
 
         /// Default margin: 8 px
         static let defaultLayoutMargin: CGFloat = 8
@@ -27,8 +30,8 @@ class Theme {
         /// Medium vertical margin: 16 px
         static let marginMediumVertical: CGFloat = 16
 
-        /// Medium margin: 20 px
-        static let marginMedium: CGFloat = 20
+        /// Medium margin: 17 px
+        static let marginMedium: CGFloat = 17
 
         /// Semi medium margin: 24 px
         static let marginSemiMedium: CGFloat = 24

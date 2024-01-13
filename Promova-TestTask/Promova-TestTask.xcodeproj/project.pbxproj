@@ -20,6 +20,8 @@
 		1858B9A82B51F7A100B9DE09 /* Theme+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9A72B51F7A100B9DE09 /* Theme+Colors.swift */; };
 		1858B9AA2B51F7C100B9DE09 /* Theme+Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9A92B51F7C100B9DE09 /* Theme+Fonts.swift */; };
 		1858B9AC2B51F7E900B9DE09 /* Theme+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9AB2B51F7E900B9DE09 /* Theme+Constants.swift */; };
+		1858B9B02B51FC7F00B9DE09 /* CategoryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9AF2B51FC7E00B9DE09 /* CategoryCardView.swift */; };
+		1858B9B22B51FF1C00B9DE09 /* CategoryStatusType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9B12B51FF1C00B9DE09 /* CategoryStatusType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		1858B9A72B51F7A100B9DE09 /* Theme+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme+Colors.swift"; sourceTree = "<group>"; };
 		1858B9A92B51F7C100B9DE09 /* Theme+Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme+Fonts.swift"; sourceTree = "<group>"; };
 		1858B9AB2B51F7E900B9DE09 /* Theme+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme+Constants.swift"; sourceTree = "<group>"; };
+		1858B9AF2B51FC7E00B9DE09 /* CategoryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCardView.swift; sourceTree = "<group>"; };
+		1858B9B12B51FF1C00B9DE09 /* CategoryStatusType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryStatusType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 				1858B97E2B51DDF000B9DE09 /* Features */,
 				1858B9862B51E20C00B9DE09 /* Networking */,
 				1858B9732B51DD8400B9DE09 /* Preview Content */,
+				1858B9AD2B51FC5B00B9DE09 /* UI Components */,
 			);
 			path = "Promova-TestTask";
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				1858B9972B51E89D00B9DE09 /* Categories.swift */,
+				1858B9B12B51FF1C00B9DE09 /* CategoryStatusType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -190,6 +196,22 @@
 				1858B9AB2B51F7E900B9DE09 /* Theme+Constants.swift */,
 			);
 			path = Theme;
+			sourceTree = "<group>";
+		};
+		1858B9AD2B51FC5B00B9DE09 /* UI Components */ = {
+			isa = PBXGroup;
+			children = (
+				1858B9AE2B51FC6D00B9DE09 /* Category View */,
+			);
+			path = "UI Components";
+			sourceTree = "<group>";
+		};
+		1858B9AE2B51FC6D00B9DE09 /* Category View */ = {
+			isa = PBXGroup;
+			children = (
+				1858B9AF2B51FC7E00B9DE09 /* CategoryCardView.swift */,
+			);
+			path = "Category View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,12 +286,14 @@
 			files = (
 				1858B9A62B51F78600B9DE09 /* Theme+Dimensions.swift in Sources */,
 				1858B9852B51E18500B9DE09 /* DashboardViewModel.swift in Sources */,
+				1858B9B02B51FC7F00B9DE09 /* CategoryCardView.swift in Sources */,
 				1858B9A82B51F7A100B9DE09 /* Theme+Colors.swift in Sources */,
 				1858B96F2B51DD8300B9DE09 /* DashboardView.swift in Sources */,
 				1858B9AA2B51F7C100B9DE09 /* Theme+Fonts.swift in Sources */,
 				1858B9AC2B51F7E900B9DE09 /* Theme+Constants.swift in Sources */,
 				1858B9942B51E52400B9DE09 /* Config.swift in Sources */,
 				1858B9A32B51EC7300B9DE09 /* NetworkManager.swift in Sources */,
+				1858B9B22B51FF1C00B9DE09 /* CategoryStatusType.swift in Sources */,
 				1858B9982B51E89D00B9DE09 /* Categories.swift in Sources */,
 				1858B9922B51E4D600B9DE09 /* Config+URLs.swift in Sources */,
 				1858B96D2B51DD8300B9DE09 /* MainView.swift in Sources */,

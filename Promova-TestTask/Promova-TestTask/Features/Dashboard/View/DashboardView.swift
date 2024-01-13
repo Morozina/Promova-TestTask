@@ -12,11 +12,15 @@ struct DashboardView: View {
 
     var body: some View {
         VStack {
-            ForEach(viewModel.categories, id: \.self) { category in
-                Text(category.title)
+            ScrollView {
+                VStack(spacing: Theme.Dimensions.marginMediumVertical) {
+                    ForEach(viewModel.categories, id: \.self) { item in
+                        CategoryCardView(imageURL: item.imageURL, title: item.title, subTitle: item.description, type: item.type, onAction: nil)
+                    }
+                }
+                .padding(.top, Theme.Dimensions.marginMediumVertical)
             }
         }
-        .padding()
         .onAppear {
             Task {
                 await viewModel.loadCategories()
