@@ -32,7 +32,7 @@ struct CategoryCardView: View {
                 )
                 ComingSoonSection
             }
-            .padding(.horizontal, Theme.Dimensions.marginSemiLarge)
+            .padding(.horizontal, Theme.Dimensions.marginExtraMedium)
             .frame(maxHeight: Theme.Constants.CategoryCard.maxCardHeight)
         }
         .buttonStyle(.plain)

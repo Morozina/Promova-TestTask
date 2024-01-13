@@ -8,20 +8,26 @@
 import SwiftUI
 
 struct CategoryDetailsView: View {
+    // MARK: - Dependencies
+    let title: String
+
     // MARK: - Router
     @EnvironmentObject var router: Router
 
     var body: some View {
-        Button {
-            router.pop()
-        } label: {
-            Text("BACK")
+        VStack(spacing: .zero) {
+            NavigationView(title: title, onBackAction: router.pop)
+            Spacer()
+            Button {
+                router.pop()
+            } label: {
+                Text("BACK")
+            }
         }
         .background(Color(Theme.Colors.generalBgColor))
     }
-
 }
 
 #Preview {
-    CategoryDetailsView()
+    CategoryDetailsView(title: "")
 }

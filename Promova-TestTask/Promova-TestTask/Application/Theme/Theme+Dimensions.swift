@@ -27,6 +27,9 @@ class Theme {
         /// Default margin: 8 px
         static let defaultLayoutMargin: CGFloat = 8
 
+        /// Medium horizontal margin: 15 px
+        static let marginMediumHorizontal: CGFloat = 15
+
         /// Medium vertical margin: 16 px
         static let marginMediumVertical: CGFloat = 16
 
@@ -36,20 +39,23 @@ class Theme {
         /// Semi medium margin: 24 px
         static let marginSemiMedium: CGFloat = 24
 
-        /// Semi large margin: 25 px
-        static let marginSemiLarge: CGFloat = 25
+        /// Extra medium margin: 25 px
+        static let marginExtraMedium: CGFloat = 25
+
+        /// Semi large margin: 28 px
+        static let marginSemiLarge: CGFloat = 28
 
         /// Large margin: 32 px
         static let marginLarge: CGFloat = 32
 
-        /// Semi extra large margin: 48 px
-        static let marginSemiExtraLarge: CGFloat = 48
+        /// Semi extra large margin: 44 px
+        static let marginSemiExtraLarge: CGFloat = 44
 
-        /// Extra large margin: 66 px
-        static let marginExtraLarge: CGFloat = 66
+        /// Extra  large margin: 48 px
+        static let marginExtraLarge: CGFloat = 48
 
-        /// Extra extra large margin: 72 px
-        static let marginExtraExtraLagre: CGFloat = 72
+        /// Extra Extra large margin: 66 px
+        static let marginExtraExtraLarge: CGFloat = 66
 
         /// Default iPad margin: 200 px
         static let marginDefaultIPad: CGFloat = 200

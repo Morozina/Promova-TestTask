@@ -27,6 +27,7 @@
 		1858B9BC2B52CC7B00B9DE09 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9BB2B52CC7B00B9DE09 /* Router.swift */; };
 		1858B9C02B52CCCF00B9DE09 /* AppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9BF2B52CCCF00B9DE09 /* AppRoute.swift */; };
 		1858B9C42B52CDBD00B9DE09 /* CategoryDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9C32B52CDBD00B9DE09 /* CategoryDetailsView.swift */; };
+		1858B9C72B52D1E700B9DE09 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9C62B52D1E700B9DE09 /* NavigationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		1858B9BB2B52CC7B00B9DE09 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		1858B9BF2B52CCCF00B9DE09 /* AppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoute.swift; sourceTree = "<group>"; };
 		1858B9C32B52CDBD00B9DE09 /* CategoryDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailsView.swift; sourceTree = "<group>"; };
+		1858B9C62B52D1E700B9DE09 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +216,7 @@
 		1858B9AD2B51FC5B00B9DE09 /* UI Components */ = {
 			isa = PBXGroup;
 			children = (
+				1858B9C52B52D1D000B9DE09 /* Navigation View */,
 				1858B9AE2B51FC6D00B9DE09 /* Category View */,
 			);
 			path = "UI Components";
@@ -283,6 +286,14 @@
 				1858B9C32B52CDBD00B9DE09 /* CategoryDetailsView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		1858B9C52B52D1D000B9DE09 /* Navigation View */ = {
+			isa = PBXGroup;
+			children = (
+				1858B9C62B52D1E700B9DE09 /* NavigationView.swift */,
+			);
+			path = "Navigation View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,6 +366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1858B9C72B52D1E700B9DE09 /* NavigationView.swift in Sources */,
 				1858B9A62B51F78600B9DE09 /* Theme+Dimensions.swift in Sources */,
 				1858B9852B51E18500B9DE09 /* DashboardViewModel.swift in Sources */,
 				1858B9B02B51FC7F00B9DE09 /* CategoryCardView.swift in Sources */,
