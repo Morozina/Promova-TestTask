@@ -10,6 +10,8 @@ import SwiftUI
 struct FactCardView: View {
     let imageURL: URL?
     let factText: String
+    let leftChevronAction: (() -> Void)?
+    let rightChevronAction: (() -> Void)?
 
     var body: some View {
         VStack(spacing: Theme.Dimensions.marginMedium) {
@@ -45,7 +47,7 @@ struct FactCardView: View {
     var ButtonsSection: some View {
         HStack(spacing: .zero) {
             Button {
-
+                leftChevronAction?()
             } label: {
                 Image(systemName: "chevron.left.circle")
                     .font(Theme.Fonts.light52)
@@ -53,7 +55,7 @@ struct FactCardView: View {
             }
             Spacer()
             Button {
-
+                rightChevronAction?()
             } label: {
                 Image(systemName: "chevron.right.circle")
                     .font(Theme.Fonts.light52)
@@ -65,5 +67,5 @@ struct FactCardView: View {
 }
 
 #Preview {
-    FactCardView(imageURL: URL(string: "https://cdn2.thecatapi.com/images/a94.jpg"), factText: "Cats have 32 muscles that control the outer ear (humans have only 6). A cat can independently rotate its ears 180 degrees.")
+    FactCardView(imageURL: URL(string: "https://cdn2.thecatapi.com/images/a94.jpg"), factText: "Cats have 32 muscles that control the outer ear (humans have only 6). A cat can independently rotate its ears 180 degrees.", leftChevronAction: nil, rightChevronAction: nil)
 }

@@ -17,7 +17,7 @@ struct HostingView: View {
             case .dashboard:
                 DashboardView(viewModel: DashboardViewModel())
             case .categoryDetails(let title, let content):
-                CategoryDetailsView(viewMdoel: CategoryDetailsViewModel(categoryTitle: title, factContent: content))
+                CategoryDetailsView(viewModel: CategoryDetailsViewModel(categoryTitle: title, factContent: content))
             }
         }
     }

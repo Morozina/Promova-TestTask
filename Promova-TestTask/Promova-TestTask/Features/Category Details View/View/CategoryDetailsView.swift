@@ -9,20 +9,27 @@ import SwiftUI
 
 struct CategoryDetailsView: View {
     // MARK: - View Model
-    @StateObject var viewMdoel: CategoryDetailsViewModel
+    @StateObject var viewModel: CategoryDetailsViewModel
 
     // MARK: - Router
     @EnvironmentObject var router: Router
 
     var body: some View {
         VStack(spacing: Theme.Dimensions.marginExtraExtraLarge) {
-            NavigationView(title: viewMdoel.categoryTitle, onBackAction: router.pop)
-            ScrollView {
-                ForEach(viewMdoel.factContent, id: \.self) { fact in
-                    FactCardView(imageURL: fact.imageURL, factText: fact.fact)
-                        .padding(.horizontal, Theme.Dimensions.marginMediumPlus)
+            NavigationView(title: viewModel.categoryTitle, onBackAction: router.pop)
+            TabView(selection: $viewModel.selectedItem) {
+                ForEach(viewModel.factContent.indices, id: \.self) { index in
+                    FactCardView(imageURL: viewModel.factContent[index].imageURL, factText: viewModel.factContent[index].fact) {
+                        viewModel.leftChevronAction(for: index)
+                    } rightChevronAction: {
+                        viewModel.rightChevronAction(for: index)
+                    }
+                    .padding(.horizontal, Theme.Dimensions.marginMediumPlus)
+                    .tag(index)
                 }
             }
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+            .animation(.default, value: viewModel.selectedItem)
             Spacer()
         }
         .background(Color(Theme.Colors.generalBgColor))
@@ -30,5 +37,5 @@ struct CategoryDetailsView: View {
 }
 
 #Preview {
-    CategoryDetailsView(viewMdoel: CategoryDetailsViewModel(categoryTitle: "", factContent: [ContentItem(fact: "", image: "")]))
+    CategoryDetailsView(viewModel: CategoryDetailsViewModel(categoryTitle: "", factContent: [ContentItem(fact: "", image: "")]))
 }
