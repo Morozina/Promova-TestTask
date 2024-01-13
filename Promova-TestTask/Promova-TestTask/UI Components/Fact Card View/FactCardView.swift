@@ -36,7 +36,7 @@ struct FactCardView: View {
                 if let image = phase.image {
                     image
                         .resizable()
-                        .frame(height: Theme.Constants.FactCard.imageSize.height)
+                        .frame(height: Theme.Constants.FactCard.imageHeight)
                 }
             }
         }

@@ -28,9 +28,8 @@ extension Theme {
         }
 
         enum FactCard {
-            static let imageSize: CGSize = CGSize(width: 315, height: 234)
-            static let smallIconSize: CGSize = CGSize(width: 10, height: 12)
             static let maxCardHeight: CGFloat = 500
+            static let imageHeight: CGFloat = 234
         }
     }
 }
