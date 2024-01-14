@@ -40,13 +40,16 @@ struct CategoryCardView: View {
     
     @ViewBuilder var ImageSection: some View {
         if let url = imageURL {
-            AsyncImage(url: url) { phase in
+            CacheAsyncImage(url: url) { phase in
                 if let image = phase.image {
                     image
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: Theme.Constants.CategoryCard.imageSize.width, height: Theme.Constants.CategoryCard.imageSize.height)
                         .clipped()
+                } else {
+                    Color.white
+                        .frame(width: Theme.Constants.CategoryCard.imageSize.width, height: Theme.Constants.CategoryCard.imageSize.height)
                 }
             }
         }

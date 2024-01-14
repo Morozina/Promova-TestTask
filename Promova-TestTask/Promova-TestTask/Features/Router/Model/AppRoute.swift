@@ -9,7 +9,7 @@ import Foundation
 
 enum AppRoute: Hashable {
     case dashboard
-    case categoryDetails(_: String, _: [ContentItem])
+    case categoryDetails(String, [ContentItem])
 }
 
 extension AppRoute: Equatable {

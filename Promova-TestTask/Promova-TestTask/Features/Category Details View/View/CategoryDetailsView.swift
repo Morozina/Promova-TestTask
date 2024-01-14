@@ -15,14 +15,14 @@ struct CategoryDetailsView: View {
     @EnvironmentObject var router: Router
 
     var body: some View {
-        VStack(spacing: Theme.Dimensions.marginExtraExtraLarge) {
+        VStack(spacing: .zero) {
             NavigationView(title: viewModel.categoryTitle, onBackAction: router.pop)
             TabView(selection: $viewModel.selectedItem) {
                 ForEach(viewModel.factContent.indices, id: \.self) { index in
                     FactCardView(imageURL: viewModel.factContent[index].imageURL, factText: viewModel.factContent[index].fact) {
-                        viewModel.leftChevronAction(for: index)
+                        viewModel.chevronAction(for: index, and: .left)
                     } rightChevronAction: {
-                        viewModel.rightChevronAction(for: index)
+                        viewModel.chevronAction(for: index, and: .right)
                     }
                     .padding(.horizontal, Theme.Dimensions.marginMediumPlus)
                     .tag(index)

@@ -32,7 +32,6 @@ struct PageLoadingView: View {
                     }
                 }
             }
-
         }
     }
 }

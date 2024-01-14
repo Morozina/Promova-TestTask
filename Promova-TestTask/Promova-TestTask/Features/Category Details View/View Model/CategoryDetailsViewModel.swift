@@ -22,15 +22,16 @@ final class CategoryDetailsViewModel: ObservableObject {
     }
 
     // MARK: - Not private method
-    func leftChevronAction(for index: Int) {
-        if selectedItem > .zero {
-            selectedItem = index.decrement()
-        }
-    }
-
-    func rightChevronAction(for index: Int) {
-        if selectedItem < factContent.count - 1 {
-            selectedItem = index.increment()
+    func chevronAction(for index: Int, and duration: CategoryCevronModel) {
+        switch duration {
+        case .left:
+            if selectedItem > .zero {
+                selectedItem = index.decrement()
+            }
+        case .right:
+            if selectedItem < factContent.count - 1 {
+                selectedItem = index.increment()
+            }
         }
     }
 }

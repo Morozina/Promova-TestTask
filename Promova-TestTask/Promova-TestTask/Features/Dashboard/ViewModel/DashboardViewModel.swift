@@ -27,20 +27,30 @@ final class DashboardViewModel: ObservableObject {
     }
 
     // MARK: - Not private methods
-    func loadCategories() async {
-        // Fetch categories
-        let fetchedCategories: [Categories]? = await networkManager.fetchCategoriesAsync()
+    func loadCategories() {
+        // Show loading indicator
+        self.isLoading = true
 
-        // Make sure that fetchedCategories != nil else return from func
-        guard let fetchedCategories else { return }
+        // Fetch categories in the background
+        Task(priority: .userInitiated) {
+            let fetchedCategories: [Categories]? = await self.networkManager.fetchCategories()
 
-        // Sort the fetchedCategories based on the order property
-        let sortedCategories = fetchedCategories.sorted(by: { $0.order < $1.order })
+            // Make sure that fetchedCategories != nil else return from func
+            guard let fetchedCategories else {
+                DispatchQueue.main.async {
+                    self.isLoading = false
+                }
+                return
+            }
 
-        // Switch to the main thread to update the UI
-        DispatchQueue.main.async {
-            self.categories = sortedCategories
-            self.isLoading = false
+            // Sort the fetchedCategories based on the order property
+            let sortedCategories = fetchedCategories.sorted(by: { $0.order < $1.order })
+
+            // Switch to the main thread to update the UI
+            DispatchQueue.main.async {
+                self.categories = sortedCategories
+                self.isLoading = false
+            }
         }
     }
 
@@ -52,14 +62,17 @@ final class DashboardViewModel: ObservableObject {
     }
 
     func handleShowAdAction(with router: Router) {
+        // Show ad Loader
         withAnimation {
             shouldShowLoader = true
         }
 
+        // Make Circle fully filled in 2 sec
         withAnimation(.easeInOut(duration: Theme.Constants.Dashboard.circleProgressDuration)) {
             circleProgress = 1
         }
 
+        // Timer after 2 sec hide loader, reset progress for circle and navigate to category details page
         Timer.scheduledTimer(withTimeInterval: Theme.Constants.Dashboard.circleProgressDuration, repeats: false) { _ in
             withAnimation {
                 self.shouldShowLoader = false

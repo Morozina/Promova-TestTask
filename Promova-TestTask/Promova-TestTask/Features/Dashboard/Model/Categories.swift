@@ -28,7 +28,6 @@ struct Categories: Codable {
 
 extension Categories: Hashable {
     static func == (lhs: Categories, rhs: Categories) -> Bool {
-        // Assuming two instances are equal if all properties are equal
         lhs.title == rhs.title &&
         lhs.description == rhs.description &&
         lhs.image == rhs.image &&
