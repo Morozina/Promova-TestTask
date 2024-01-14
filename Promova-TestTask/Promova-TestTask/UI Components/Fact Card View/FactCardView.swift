@@ -14,30 +14,34 @@ struct FactCardView: View {
     let rightChevronAction: (() -> Void)?
 
     var body: some View {
-        VStack(spacing: Theme.Dimensions.marginMedium) {
+        VStack(spacing: .zero) {
             ImageSection
             Text(factText)
                 .font(Theme.Fonts.medium18)
                 .multilineTextAlignment(.center)
-                .fixedSize(horizontal: false, vertical: true)
+                .minimumScaleFactor(Theme.Constants.halfShadowOpacity)
+                .padding(.top, Theme.Dimensions.marginMedium)
             Spacer()
             ButtonsSection
         }
         .padding(.all, Theme.Dimensions.defaultLayoutMargin)
-        .frame(minHeight: Theme.Constants.FactCard.maxCardHeight)
+        .frame(maxHeight: Theme.Constants.FactCard.maxCardHeight)
         .background(
             RoundedRectangle(cornerRadius: Theme.Constants.defaultCornerRadius)
                 .fill(Color.white)
-                .shadow(color: .black.opacity(Theme.Constants.smallShadowOpacity), radius: Theme.Dimensions.marginMinimal, x: .zero, y: Theme.Dimensions.marginSmall)
+                .shadow(color: .black.opacity(Theme.Constants.mediumShadowOpacity), radius: Theme.Dimensions.marginSemiLarge, x: .zero, y: Theme.Dimensions.marginMediumPlus)
         )
     }
 
     @ViewBuilder var ImageSection: some View {
         if let url = imageURL {
-            AsyncImage(url: url) { phase in
+            CacheAsyncImage(url: url) { phase in
                 if let image = phase.image {
                     image
                         .resizable()
+                        .frame(height: Theme.Constants.FactCard.imageHeight)
+                } else {
+                    Color.white
                         .frame(height: Theme.Constants.FactCard.imageHeight)
                 }
             }

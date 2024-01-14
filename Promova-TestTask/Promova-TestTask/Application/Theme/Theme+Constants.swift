@@ -15,6 +15,9 @@ extension Theme {
         /// Small shadow opacity 20%
         static let smallShadowOpacity: Double = 0.2
 
+        /// Medium shadow opacity 30%
+        static let mediumShadowOpacity: Double = 0.3
+
         /// Half shadow opacity 50%
         static let halfShadowOpacity: Double = 0.5
 

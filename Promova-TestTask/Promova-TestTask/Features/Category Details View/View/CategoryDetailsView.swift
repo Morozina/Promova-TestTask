@@ -15,7 +15,7 @@ struct CategoryDetailsView: View {
     @EnvironmentObject var router: Router
 
     var body: some View {
-        VStack(spacing: Theme.Dimensions.marginExtraExtraLarge) {
+        VStack(spacing: .zero) {
             NavigationView(title: viewModel.categoryTitle, onBackAction: router.pop)
             TabView(selection: $viewModel.selectedItem) {
                 ForEach(viewModel.factContent.indices, id: \.self) { index in
