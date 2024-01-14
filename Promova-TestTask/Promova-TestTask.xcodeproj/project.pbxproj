@@ -32,6 +32,7 @@
 		1858B9CD2B52F0E300B9DE09 /* CategoryDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9CC2B52F0E300B9DE09 /* CategoryDetailsViewModel.swift */; };
 		1858B9CF2B52F1F200B9DE09 /* ContentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9CE2B52F1F200B9DE09 /* ContentItem.swift */; };
 		1858B9D22B52FF3E00B9DE09 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9D12B52FF3E00B9DE09 /* Int+Extensions.swift */; };
+		1858B9DA2B53229900B9DE09 /* PageLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1858B9D92B53229900B9DE09 /* PageLoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		1858B9CC2B52F0E300B9DE09 /* CategoryDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailsViewModel.swift; sourceTree = "<group>"; };
 		1858B9CE2B52F1F200B9DE09 /* ContentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentItem.swift; sourceTree = "<group>"; };
 		1858B9D12B52FF3E00B9DE09 /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
+		1858B9D92B53229900B9DE09 /* PageLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageLoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +228,7 @@
 		1858B9AD2B51FC5B00B9DE09 /* UI Components */ = {
 			isa = PBXGroup;
 			children = (
+				1858B9D82B53228900B9DE09 /* Page Loading View */,
 				1858B9C82B52EB9F00B9DE09 /* Fact Card View */,
 				1858B9C52B52D1D000B9DE09 /* Navigation View */,
 				1858B9AE2B51FC6D00B9DE09 /* Category View */,
@@ -332,6 +335,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		1858B9D82B53228900B9DE09 /* Page Loading View */ = {
+			isa = PBXGroup;
+			children = (
+				1858B9D92B53229900B9DE09 /* PageLoadingView.swift */,
+			);
+			path = "Page Loading View";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -348,6 +359,8 @@
 			dependencies = (
 			);
 			name = "Promova-TestTask";
+			packageProductDependencies = (
+			);
 			productName = "Promova-TestTask";
 			productReference = 1858B9692B51DD8300B9DE09 /* Promova-TestTask.app */;
 			productType = "com.apple.product-type.application";
@@ -376,6 +389,8 @@
 				Base,
 			);
 			mainGroup = 1858B9602B51DD8300B9DE09;
+			packageReferences = (
+			);
 			productRefGroup = 1858B96A2B51DD8300B9DE09 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -424,6 +439,7 @@
 				1858B9B22B51FF1C00B9DE09 /* CategoryStatusType.swift in Sources */,
 				1858B9982B51E89D00B9DE09 /* Categories.swift in Sources */,
 				1858B9922B51E4D600B9DE09 /* Config+URLs.swift in Sources */,
+				1858B9DA2B53229900B9DE09 /* PageLoadingView.swift in Sources */,
 				1858B96D2B51DD8300B9DE09 /* MainView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

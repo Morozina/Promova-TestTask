@@ -15,30 +15,38 @@ struct DashboardView: View {
     @EnvironmentObject var router: Router
 
     var body: some View {
-        VStack {
-            ZStack {
-                ScrollView {
-                    VStack(spacing: Theme.Dimensions.marginMediumVertical) {
-                        ForEach(viewModel.categories, id: \.self) { item in
-                            CategoryCardView(imageURL: item.imageURL, title: item.title, subTitle: item.description, type: item.type) {
-                                item.type == .free ? router.push(to: .categoryDetails(item.title, item.content ?? [])) : viewModel.handleAlertAction(with: item.title, and: item.content ?? [], type: item.type)
-                            }
-                        }
-                    }
-                    .padding(.top, Theme.Dimensions.marginMediumVertical)
-                    .blur(radius: viewModel.shouldShowLoader ? 1 : 0)
-                }
-                if viewModel.shouldShowLoader {
-                    LoaderSection
-                }
+        VStack(spacing: .zero) {
+            if viewModel.isLoading {
+                PageLoadingView()
+            } else {
+                ContentSection
             }
         }
-        .background(Color(Theme.Colors.generalBgColor))
         .onAppear {
             Task {
                 await viewModel.loadCategories()
             }
         }
+    }
+
+    var ContentSection: some View {
+        ZStack {
+            ScrollView {
+                VStack(spacing: Theme.Dimensions.marginMediumVertical) {
+                    ForEach(viewModel.categories, id: \.self) { item in
+                        CategoryCardView(imageURL: item.imageURL, title: item.title, subTitle: item.description, type: item.type) {
+                            item.type == .free ? router.push(to: .categoryDetails(item.title, item.content ?? [])) : viewModel.handleAlertAction(with: item.title, and: item.content ?? [], type: item.type)
+                        }
+                    }
+                }
+                .padding(.top, Theme.Dimensions.marginMediumVertical)
+                .blur(radius: viewModel.shouldShowLoader ? 1 : 0)
+            }
+            if viewModel.shouldShowLoader {
+                LoaderSection
+            }
+        }
+        .background(Color(Theme.Colors.generalBgColor))
         .alert(isPresented: $viewModel.shouldShowAlert) {
             if viewModel.categoryCardType == .paid {
                 Alert(
