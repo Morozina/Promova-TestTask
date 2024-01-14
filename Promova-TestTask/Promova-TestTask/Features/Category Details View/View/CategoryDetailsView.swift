@@ -20,9 +20,9 @@ struct CategoryDetailsView: View {
             TabView(selection: $viewModel.selectedItem) {
                 ForEach(viewModel.factContent.indices, id: \.self) { index in
                     FactCardView(imageURL: viewModel.factContent[index].imageURL, factText: viewModel.factContent[index].fact) {
-                        viewModel.leftChevronAction(for: index)
+                        viewModel.chevronAction(for: index, and: .left)
                     } rightChevronAction: {
-                        viewModel.rightChevronAction(for: index)
+                        viewModel.chevronAction(for: index, and: .right)
                     }
                     .padding(.horizontal, Theme.Dimensions.marginMediumPlus)
                     .tag(index)

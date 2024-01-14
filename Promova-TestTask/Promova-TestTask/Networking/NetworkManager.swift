@@ -8,21 +8,17 @@
 import Foundation
 
 protocol NetworkManager {
-    func fetchCategoriesAsync() async -> [Categories]?
+    func fetchCategories() async -> [Categories]?
 }
 
 final class NetworkManagerImpl: NetworkManager {
-    func fetchCategoriesAsync() async -> [Categories]? {
-        var categories: [Categories]?
-
+    func fetchCategories() async -> [Categories]? {
         do {
             let (data, _) = try await URLSession.shared.data(from: Config.URLs.categoriesURL)
-            categories = try JSONDecoder().decode([Categories].self, from: data)
+            return try JSONDecoder().decode([Categories].self, from: data)
         } catch {
             print("Error: \(error)")
             return nil
         }
-
-        return categories
     }
 }
