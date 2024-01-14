@@ -23,9 +23,7 @@ struct DashboardView: View {
             }
         }
         .onAppear {
-            Task {
-                await viewModel.loadCategories()
-            }
+            viewModel.loadCategories()
         }
     }
 
