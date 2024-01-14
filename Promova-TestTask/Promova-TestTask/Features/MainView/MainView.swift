@@ -12,6 +12,7 @@ struct MainView: App {
     var body: some Scene {
         WindowGroup {
             HostingView()
+                .preferredColorScheme(.light)
         }
     }
 }

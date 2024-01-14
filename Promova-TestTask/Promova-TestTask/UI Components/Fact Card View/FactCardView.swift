@@ -54,6 +54,13 @@ struct FactCardView: View {
                     .foregroundColor(.black)
             }
             Spacer()
+            if let imageURL {
+                ShareLink("", item: imageURL, message: Text(factText))
+                    .font(Theme.Fonts.light52)
+                    .foregroundColor(.black)
+                    .padding([.leading, .bottom], Theme.Dimensions.defaultLayoutMargin)
+            }
+            Spacer()
             Button {
                 rightChevronAction?()
             } label: {
