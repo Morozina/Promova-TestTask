@@ -27,28 +27,30 @@ final class DashboardViewModel: ObservableObject {
     }
 
     // MARK: - Not private methods
-    func loadCategories() async {
+    func loadCategories() {
         // Show loading indicator
         self.isLoading = true
 
-        // Fetch categories
-        let fetchedCategories: [Categories]? = await self.networkManager.fetchCategories()
+        // Fetch categories in the background
+        Task(priority: .userInitiated) {
+            let fetchedCategories: [Categories]? = await self.networkManager.fetchCategories()
 
-        // Make sure that fetchedCategories != nil else return from func
-        guard let fetchedCategories else {
+            // Make sure that fetchedCategories != nil else return from func
+            guard let fetchedCategories else {
+                DispatchQueue.main.async {
+                    self.isLoading = false
+                }
+                return
+            }
+
+            // Sort the fetchedCategories based on the order property
+            let sortedCategories = fetchedCategories.sorted(by: { $0.order < $1.order })
+
+            // Switch to the main thread to update the UI
             DispatchQueue.main.async {
+                self.categories = sortedCategories
                 self.isLoading = false
             }
-            return
-        }
-
-        // Sort the fetchedCategories based on the order property
-        let sortedCategories = fetchedCategories.sorted(by: { $0.order < $1.order })
-
-        // Switch to the main thread to update the UI
-        DispatchQueue.main.async {
-            self.categories = sortedCategories
-            self.isLoading = false
         }
     }
 
